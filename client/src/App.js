@@ -13,10 +13,12 @@ function App() {
       <Router>
         <Routes>
           <Route exact path="/" element={<Login/>} />
-          <Route exact path="/forgotpassword" element={<ForgotPassword/>} />
-          <Route exact path="profile" element={<Profile/>} />
-          <Route exact path="AdminDashboard" element={<AdminDashboard />} />
+          <Route path="/forgotpassword" element={<ForgotPassword/>} />
+          <Route path="/profile" element={<Profile/>} />
+          <Route path="/AdminDashboard" element={<AdminDashboard />} />
+          
         </Routes>
+        
       </Router>
     </div>
   );

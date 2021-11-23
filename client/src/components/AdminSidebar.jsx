@@ -18,15 +18,16 @@ export default function AdminSidebar() {
         <div className="sidebar">
             <div className="sidebarWrapper">
                 <List>
-                    
+                <Link to="/home">
                 <ListItem disablePadding>
                     <ListItemButton>
                         <ListItemIcon>
                             <HomeIcon />
                         </ListItemIcon>
-                        <Link to='/home'><ListItemText primary="Home" /></Link>
+                        <ListItemText primary="Home" />
                     </ListItemButton>
                 </ListItem>
+                </Link>
                 <ListItem disablePadding>
                     <ListItemButton>
                         <ListItemIcon>
