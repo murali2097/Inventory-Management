@@ -70,9 +70,9 @@ export default function Login() {
               type="submit"
               fullWidth
               variant="contained"
-              sx={{ mt: 3, mb: 2 }}
+              sx={{ mt: 3, mb: 2 , bgColor: "white"}}
             >
-              Sign In
+              <Link href="AdminDashboard" className="Link">Sign In</Link>
             </Button>
             <Grid container>
               <Grid item xs>

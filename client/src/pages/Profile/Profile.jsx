@@ -16,9 +16,6 @@ export default function Profile() {
                 margin: 6,
                 borderRadius: 2,
                 padding: 4,
-                // display: 'flex',
-                // flexDirection: 'column',
-                // alignItems: 'center',
                 }}
                 noValidate
                 autoComplete="off"
