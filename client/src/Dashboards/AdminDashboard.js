@@ -12,14 +12,6 @@ import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
-// import ListItem from '@mui/material/ListItem';
-// import ListItemIcon from '@mui/material/ListItemIcon';
-// import ListItemText from '@mui/material/ListItemText';
-// import InboxIcon from '@mui/icons-material/Inbox';
-// import ListItemButton from '@mui/material/ListItemButton';
-// import HomeIcon from '@mui/icons-material/Home';
-// import ListAltIcon from '@mui/icons-material/ListAlt';
-// import SaveIcon from '@mui/icons-material/Save';
 import AdminSidebar from '../components/AdminSidebar';
 // import PrivateRouting from '../PrivateRouting';
 import Home from '../pages/Home/Home';
@@ -144,9 +136,7 @@ export default function AdminDashboard() {
       </Drawer>
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
         <DrawerHeader />
-        
-        <Route path="/admin/home"><Home/></Route>
-      
+        <PrivateRouting />
       </Box>
     </Box>
   );
