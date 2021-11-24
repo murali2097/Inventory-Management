@@ -13,7 +13,9 @@ import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import AdminSidebar from '../components/AdminSidebar';
-import PrivateRouting from '../PrivateRouting';
+// import PrivateRouting from '../PrivateRouting';
+import Home from '../pages/Home/Home';
+import { Route } from 'react-router-dom';
 
 
 const drawerWidth = 240;
