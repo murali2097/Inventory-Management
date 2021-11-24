@@ -66,22 +66,18 @@ export default function Login() {
               id="password"
               autoComplete="current-password"
             />
-            {/* <FormControlLabel
-              control={<Checkbox value="remember" color="primary" />}
-              label="Remember me"
-            /> */}
             <Button
               type="submit"
               fullWidth
               variant="contained"
-              sx={{ mt: 3, mb: 2 }}
+              sx={{ mt: 3, mb: 2 , bgColor: "white"}}
             >
-              Sign In
+              <Link href="AdminDashboard" className="Link">Sign In</Link>
             </Button>
             <Grid container>
               <Grid item xs>
                 <Link href="#" variant="body2">
-                  {/* Forgot password? */}
+                  
                 </Link>
               </Grid>
               <Grid item >
