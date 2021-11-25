@@ -1,5 +1,11 @@
 .header{
-    color: cadetblue;
+    color: #b0e6e3;
+}
+
+.heading{
+    display: flex;
+  align-items: center;
+  justify-content:start;
 }
 
 .Button{

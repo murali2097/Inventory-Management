@@ -5,6 +5,7 @@ import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import ForgotPassword from './pages/ForgotPassword/ForgotPassword';
 import Profile from './pages/Profile/Profile';
 import AdminDashboard from './Dashboards/AdminDashboard';
+import PrivateRouting from './PrivateRouting';
 
 
 function App() {
@@ -18,7 +19,7 @@ function App() {
           <Route path="/AdminDashboard" element={<AdminDashboard />} />
           
         </Routes>
-        
+        <PrivateRouting/>
       </Router>
     </div>
   );

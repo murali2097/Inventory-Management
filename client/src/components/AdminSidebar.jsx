@@ -7,6 +7,7 @@ import ListItemButton from '@mui/material/ListItemButton';
 import { Link } from 'react-router-dom';
 import HomeIcon from '@mui/icons-material/Home';
 import ListAltIcon from '@mui/icons-material/ListAlt';
+import SaveIcon from '@mui/icons-material/Save';
 import RestoreIcon from '@mui/icons-material/Restore';
 import FastRewindIcon from '@mui/icons-material/FastRewind';
 import CalendarViewMonthIcon from '@mui/icons-material/CalendarViewMonth';
@@ -18,57 +19,77 @@ export default function AdminSidebar() {
         <div className="sidebar">
             <div className="sidebarWrapper">
                 <List>
-                <Link to="/home">
-                <ListItem disablePadding>
-                    <ListItemButton>
-                        <ListItemIcon>
-                            <HomeIcon />
-                        </ListItemIcon>
-                        <ListItemText primary="Home" />
-                    </ListItemButton>
-                </ListItem>
-                </Link>
-                <ListItem disablePadding>
-                    <ListItemButton>
-                        <ListItemIcon>
-                            <ListAltIcon />
-                        </ListItemIcon>
-                        <ListItemText primary="Saved Orders" />
-                    </ListItemButton>
-                </ListItem>
-                <ListItem disablePadding>
-                    <ListItemButton>
-                        <ListItemIcon>
-                            <RestoreIcon />
-                        </ListItemIcon>
-                        <ListItemText primary="Active Orders" />
-                    </ListItemButton>
-                </ListItem>
-                <ListItem disablePadding>
-                    <ListItemButton>
-                        <ListItemIcon>
-                            <FastRewindIcon />
-                        </ListItemIcon>
-                        <ListItemText primary="Previous Orders" />
-                    </ListItemButton>
-                </ListItem>
-                <ListItem disablePadding>
-                    <ListItemButton>
-                        <ListItemIcon>
-                            <CalendarViewMonthIcon />
-                        </ListItemIcon>
-                        <ListItemText primary="Calender Previous Orders" />
-                    </ListItemButton>
-                </ListItem>
-                <ListItem disablePadding>
-                    <ListItemButton>
-                        <ListItemIcon>
-                            <BorderColorIcon />
-                        </ListItemIcon>
-                        <ListItemText primary="Approved Orders" />
-                    </ListItemButton>
-                </ListItem>
-                </List>
+                    <ListItem disablePadding>
+                        <Link to="/home" underline="hover">
+                            <ListItemButton>
+                                <ListItemIcon>
+                                    <HomeIcon />
+                                </ListItemIcon>
+                                <ListItemText primary="Home" />
+                            </ListItemButton>
+                        </Link>
+                    </ListItem>
+                    <ListItem disablePadding>
+                        <Link to="/AdminDashboard/CreateOrders" underline="hover">
+                            <ListItemButton>
+                                <ListItemIcon>
+                                    <ListAltIcon />
+                                </ListItemIcon>
+                                <ListItemText primary="Create Orders" />
+                            </ListItemButton>
+                        </Link>
+                    </ListItem>
+                    <ListItem disablePadding>
+                        <Link to="/AdminDashboard/SavedOrders" underline="hover">
+                            <ListItemButton>
+                                <ListItemIcon>
+                                    <SaveIcon />
+                                </ListItemIcon>
+                                <ListItemText primary="Saved Orders" />
+                            </ListItemButton>
+                        </Link>
+                    </ListItem>
+                    <ListItem disablePadding>
+                        <Link to="/AdminDashboard/ActiveOrders" underline="hover">
+                            <ListItemButton>
+                                <ListItemIcon>
+                                    <RestoreIcon />
+                                </ListItemIcon>
+                                <ListItemText primary="Active Orders" />
+                            </ListItemButton>
+                        </Link>    
+                    </ListItem>
+                    <ListItem disablePadding>
+                        <Link to="/AdminDashboard/PreviousOrders" underline="hover">
+                            <ListItemButton>
+                                <ListItemIcon>
+                                    <FastRewindIcon />
+                                </ListItemIcon>
+                                <ListItemText primary="Previous Orders" />
+                            </ListItemButton>
+                        </Link>
+                    </ListItem>
+                    <ListItem disablePadding>
+                        <Link to="/AdminDashboard/CalenderPO" underline="hover">
+                            <ListItemButton>
+                                <ListItemIcon>
+                                    <CalendarViewMonthIcon />
+                                </ListItemIcon>
+                                <ListItemText primary="Calender Previous Orders" />
+                            </ListItemButton>
+                        </Link>    
+                    </ListItem>
+                    <ListItem disablePadding>
+                        <Link to="/AdminDashboard/ApprovedOrders" underline="hover">
+                            <ListItemButton>
+                                <ListItemIcon>
+                                    <BorderColorIcon />
+                                </ListItemIcon>
+                                <ListItemText primary="Approved Orders" />
+                            </ListItemButton>
+                        </Link>
+                    </ListItem>
+                    </List>
             </div>
         </div>
     )
