@@ -24,10 +24,8 @@ import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import AdminSidebar from '../components/AdminSidebar';
 import PrivateRouting from '../PrivateRouting';
-// import PrivateRouting from '../PrivateRouting';
-// import Home from '../pages/Home/Home';
-// import { Route } from 'react-router-dom';
-
+import Home from '../pages/Home/Home';
+import { Route } from 'react-router-dom';
 
 const drawerWidth = 240;
 
@@ -79,22 +77,22 @@ const AppBar = styled(MuiAppBar, {
   }),
 }));
 
-const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' })(
-  ({ theme, open }) => ({
-    width: drawerWidth,
-    flexShrink: 0,
-    whiteSpace: 'nowrap',
-    boxSizing: 'border-box',
-    ...(open && {
-      ...openedMixin(theme),
-      '& .MuiDrawer-paper': openedMixin(theme),
-    }),
-    ...(!open && {
-      ...closedMixin(theme),
-      '& .MuiDrawer-paper': closedMixin(theme),
-    }),
+const Drawer = styled(MuiDrawer, {
+  shouldForwardProp: (prop) => prop !== 'open',
+})(({ theme, open }) => ({
+  width: drawerWidth,
+  flexShrink: 0,
+  whiteSpace: 'nowrap',
+  boxSizing: 'border-box',
+  ...(open && {
+    ...openedMixin(theme),
+    '& .MuiDrawer-paper': openedMixin(theme),
   }),
-);
+  ...(!open && {
+    ...closedMixin(theme),
+    '& .MuiDrawer-paper': closedMixin(theme),
+  }),
+}));
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -211,8 +209,8 @@ export default function AdminDashboard() {
       onClose={handleMobileMenuClose}
     >
       <MenuItem>
-        <IconButton size="large" aria-label="show 4 new mails" color="inherit">
-          <Badge badgeContent={4} color="error">
+        <IconButton size='large' aria-label='show 4 new mails' color='inherit'>
+          <Badge badgeContent={4} color='error'>
             <MailIcon />
           </Badge>
         </IconButton>
@@ -220,11 +218,11 @@ export default function AdminDashboard() {
       </MenuItem>
       <MenuItem>
         <IconButton
-          size="large"
-          aria-label="show 17 new notifications"
-          color="inherit"
+          size='large'
+          aria-label='show 17 new notifications'
+          color='inherit'
         >
-          <Badge badgeContent={17} color="error">
+          <Badge badgeContent={17} color='error'>
             <NotificationsIcon />
           </Badge>
         </IconButton>
@@ -232,11 +230,11 @@ export default function AdminDashboard() {
       </MenuItem>
       <MenuItem onClick={handleProfileMenuOpen}>
         <IconButton
-          size="large"
-          aria-label="account of current user"
-          aria-controls="primary-search-account-menu"
-          aria-haspopup="true"
-          color="inherit"
+          size='large'
+          aria-label='account of current user'
+          aria-controls='primary-search-account-menu'
+          aria-haspopup='true'
+          color='inherit'
         >
           <AccountCircle />
         </IconButton>
@@ -248,13 +246,13 @@ export default function AdminDashboard() {
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
-      <AppBar position="fixed" open={open}>
+      <AppBar position='fixed' open={open}>
         <Toolbar>
           <IconButton
-            color="inherit"
-            aria-label="open drawer"
+            color='inherit'
+            aria-label='open drawer'
             onClick={handleDrawerOpen}
-            edge="start"
+            edge='start'
             sx={{
               marginRight: '36px',
               ...(open && { display: 'none' }),
@@ -262,69 +260,84 @@ export default function AdminDashboard() {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" noWrap component="div">
+          <Typography variant='h6' noWrap component='div'>
             Admin Dashboard
           </Typography>
 
-              <Search>
-                <SearchIconWrapper>
-                  <SearchIcon />
-                </SearchIconWrapper>
-                <StyledInputBase
-                  placeholder="Search…"
-                  inputProps={{ 'aria-label': 'search' }}
-                />
-              </Search>
+          <Search>
+            <SearchIconWrapper>
+              <SearchIcon />
+            </SearchIconWrapper>
+            <StyledInputBase
+              placeholder='Search…'
+              inputProps={{ 'aria-label': 'search' }}
+            />
+          </Search>
 
-                  <div className="box">
-                  <Box sx={{ display: { xs: 'none', md: 'flex', flexGrow: 1, flexDirection: 'right' } }}>
-                    <IconButton size="large" aria-label="show 4 new mails" color="inherit">
-                      <Badge badgeContent={4} color="error">
-                        <MailIcon />
-                      </Badge>
-                    </IconButton>
-                    <IconButton
-                      size="large"
-                      aria-label="show 17 new notifications"
-                      color="inherit"
-                    >
-                      <Badge badgeContent={17} color="error">
-                        <NotificationsIcon />
-                      </Badge>
-                    </IconButton>
-                    <IconButton
-                      size="large"
-                      edge="end"
-                      aria-label="account of current user"
-                      // aria-controls={menuId}
-                      aria-haspopup="true"
-                      // onClick={handleProfileMenuOpen}
-                      color="inherit"
-                    >
-                      <AccountCircle />
-                    </IconButton>
-                  </Box>
-                  <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
-                    <IconButton
-                      size="large"
-                      aria-label="show more"
-                      aria-controls={mobileMenuId}
-                      aria-haspopup="true"
-                      onClick={handleMobileMenuOpen}
-                      color="inherit"
-                    >
-                      <MoreIcon />
-                    </IconButton>
-                  </Box>
-                  </div>
-
+          <div className='box'>
+            <Box
+              sx={{
+                display: {
+                  xs: 'none',
+                  md: 'flex',
+                  flexGrow: 1,
+                  flexDirection: 'right',
+                },
+              }}
+            >
+              <IconButton
+                size='large'
+                aria-label='show 4 new mails'
+                color='inherit'
+              >
+                <Badge badgeContent={4} color='error'>
+                  <MailIcon />
+                </Badge>
+              </IconButton>
+              <IconButton
+                size='large'
+                aria-label='show 17 new notifications'
+                color='inherit'
+              >
+                <Badge badgeContent={17} color='error'>
+                  <NotificationsIcon />
+                </Badge>
+              </IconButton>
+              <IconButton
+                size='large'
+                edge='end'
+                aria-label='account of current user'
+                // aria-controls={menuId}
+                aria-haspopup='true'
+                // onClick={handleProfileMenuOpen}
+                color='inherit'
+              >
+                <AccountCircle />
+              </IconButton>
+            </Box>
+            <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
+              <IconButton
+                size='large'
+                aria-label='show more'
+                aria-controls={mobileMenuId}
+                aria-haspopup='true'
+                onClick={handleMobileMenuOpen}
+                color='inherit'
+              >
+                <MoreIcon />
+              </IconButton>
+            </Box>
+          </div>
         </Toolbar>
       </AppBar>
-      
-      <Drawer variant="permanent" open={open}>
+      <Drawer variant='permanent' open={open}>
         <DrawerHeader>
           <IconButton onClick={handleDrawerClose}>
-            {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
+            {theme.direction === 'rtl' ? (
+              <ChevronRightIcon />
+            ) : (
+              <ChevronLeftIcon />
+            )}
           </IconButton>
         </DrawerHeader>
         <Divider />
@@ -332,17 +345,14 @@ export default function AdminDashboard() {
           <AdminSidebar />
         </List>
         <Divider />
-        <List>
-         
-        </List>
+        <List></List>
       </Drawer>
-      <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+      <Box component='main' sx={{ flexGrow: 1, p: 3 }}>
         <DrawerHeader />
         <PrivateRouting />
       </Box>
       {renderMobileMenu}
       {renderMenu}
-
     </Box>
   );
 }

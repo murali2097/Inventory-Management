@@ -1,28 +1,30 @@
-import React from 'react'
-import './App.css';
-import Login from './pages/Login/Login';
-import {Routes, Route} from 'react-router-dom';
-import ForgotPassword from './pages/ForgotPassword/ForgotPassword';
-import Profile from './pages/Profile/Profile';
-import AdminDashboard from './Dashboards/AdminDashboard';
-import PrivateRouting from './PrivateRouting';
+import React, { Suspense, lazy } from 'react';
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Navigate,
+} from 'react-router-dom';
+import NoMatch from './components/common/404';
+import CircleLoader from './components/common/circular-loader';
+import Login from './pages/Login';
 
-
-function App() {
-  return (
-    <div>
-      
-        <Routes>
-          <Route exact path="/" element={<Login/>} />
-          <Route path="/forgotpassword" element={<ForgotPassword/>} />
-          <Route path="/profile" element={<Profile/>} />
-          <Route path="/AdminDashboard" element={<AdminDashboard />} />
-          
-        </Routes>
-        <PrivateRouting/>
-    
-    </div>
-  );
-}
+const App = () => (
+  <Router>
+    <Suspense fallback={<CircleLoader />}>
+      <Route exact path='/'>
+        {window.loggedIn ? (
+          <Navigate to='/dashboard' />
+        ) : (
+          <Navigate to='/login' />
+        )}
+      </Route>
+      <Route path='/login' component={Login} />
+      <Route path='*'>
+        <NoMatch />
+      </Route>
+    </Suspense>
+  </Router>
+);
 
 export default App;
