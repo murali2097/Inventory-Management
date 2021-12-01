@@ -1,29 +1,26 @@
-import React, { Suspense, lazy } from 'react';
+import React, { Suspense, lazy, Fragment } from 'react';
 import {
   BrowserRouter as Router,
   Route,
-  Switch,
+  Routes,
   Navigate,
 } from 'react-router-dom';
-import NoMatch from './components/common/404';
-import CircleLoader from './components/common/circular-loader';
 import Login from './pages/Login';
-
+import Home from './pages/Home';
+import AdminDashboard from './Dashboards/AdminDashboard';
 const App = () => (
   <Router>
-    <Suspense fallback={<CircleLoader />}>
-      <Route exact path='/'>
-        {window.loggedIn ? (
-          <Navigate to='/dashboard' />
-        ) : (
-          <Navigate to='/login' />
-        )}
+    <Routes>
+      <Route path='/Login'>
+        <Navigate to={'/login'} />
       </Route>
-      <Route path='/login' component={Login} />
-      <Route path='*'>
-        <NoMatch />
+      <Route path='/Dashboard'>
+        <AdminDashboard />
       </Route>
-    </Suspense>
+      <Route path='/'>
+        <Home />
+      </Route>
+    </Routes>
   </Router>
 );
 
